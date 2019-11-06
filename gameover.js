@@ -18,9 +18,5 @@ class GameOver {
 
     this.context.font = "100px Arial";
     this.context.fillText("hello", 400, 600)
-
-
-
-
   }
 }

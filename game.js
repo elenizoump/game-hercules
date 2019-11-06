@@ -75,11 +75,11 @@ class Game {
           scoreDisplay.textContent = `${this.player.score}`;
           console.log(this.player.score);
         } else {
-          // this.player.image.translate(this.player.x, this.player.y)
-          // this.player.image.rotate((Math.PI / 180) * 90)
+          const lifeDisplay = document.getElementById('life');
           if (this.player.life >= 0) {
             this.obstacles.splice(i, 1);
             this.player.life--;
+            lifeDisplay.textContent = `${this.player.life}`;
           }
           console.log(this.player.life);
         }
