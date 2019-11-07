@@ -1,10 +1,10 @@
 class Player {
   constructor(game) {
     this.game = game
-    this.x = game.width - (game.width / 4);
-    this.y = game.height - 290;
-    this.width = 133;
-    this.height = 243;
+    this.x = game.width - (game.width / 2);
+    this.y = game.height - 240;
+    this.width = 101;
+    this.height = 207.99;
     this.context = game.context;
     this.vx = 3;
     this.vy = 0;
@@ -61,10 +61,10 @@ class Player {
 
     switch (this.movingDirection) {
       case 'left':
-        this.x -= 3;
+        this.x -= 2;
         break;
       case 'right':
-        this.x += 3;
+        this.x += 2;
         break;
         // case null:
         //   this.game.background.velocityX = 0;
