@@ -8,7 +8,7 @@ class Background {
     this.x = 0;
     this.velocityX = -5;
     this.img = new Image();
-    this.img.src = "images/background - hercules.png";
+    this.img.src = "images/herculesbackground.png";
   }
   draw() {
 

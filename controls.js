@@ -1,7 +1,7 @@
 class Controls {
   constructor(game) {
     this.game = game;
-    this.player = game.player
+    this.player = game.player;
   }
   setControls() {
 
@@ -12,14 +12,18 @@ class Controls {
       // React based on the key pressed
       switch (event.keyCode) {
         case 37:
-          // this.player.moveLeft();
+          this.player.moveLeft();
           this.player.movingDirection = 'left';
+          this.game.background.velocityX = 5;
+
           // console.log(this.player.x, this.player.y);
           break;
 
         case 39:
           this.player.movingDirection = 'right';
-          // this.player.moveRight();
+          this.game.background.velocityX = -5;
+
+          this.player.moveRight();
           // console.log(this.player.x, this.player.y);
           break;
       }
@@ -30,10 +34,15 @@ class Controls {
       switch (event.keyCode) {
         case 37:
           this.player.movingDirection = null;
+          // case null:
+          this.game.background.velocityX = 0;
           break;
 
         case 39:
           this.player.movingDirection = null;
+          this.game.background.velocityX = 0;
+
+          // this.player.draw(player.movingDirection === "left")
           break;
       }
     });

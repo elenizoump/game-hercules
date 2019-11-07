@@ -8,7 +8,7 @@ class Game {
     this.background = new Background(this);
     this.controls = new Controls(this);
     this.obstacles = [];
-    this.speed = 200;
+    this.speed = 1000;
     this.obstacleTimer = 0;
     this.gameOver = new GameOver(this);
   }
@@ -30,6 +30,7 @@ class Game {
 
   animation(timestamp) {
     if (this.player.life > 0) {
+      this.player.updateImage(timestamp);
       this.drawEverything();
       this.updateEverything(timestamp);
       window.requestAnimationFrame((timestamp) => this.animation(timestamp));
