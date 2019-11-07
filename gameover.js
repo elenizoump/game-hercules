@@ -47,5 +47,6 @@ class GameOver {
     context.strokeStyle = '#D7A22E';
     context.lineWidth = 4;
     drawTextAlongArc(context, 'W E L C O M E  T O  O L Y M P U S', centerX, centerY, radius, angle);
+    this.game.gameOverSound;
   }
 }

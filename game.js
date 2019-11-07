@@ -11,9 +11,14 @@ class Game {
     this.speed = 700;
     this.obstacleTimer = 0;
     this.gameOver = new GameOver(this);
+    this.grunt = new Audio("sounds/pain4.wav");
+    this.birdsound = new Audio("sounds/deathd.wav");
+    this.gameOverSound = new Audio("sounds/tribute.wav")
+    this.gameSound = new Audio("")
   }
 
   start() {
+    this.gameSound;
     this.animation();
     this.controls.setControls();
   }
@@ -79,6 +84,7 @@ class Game {
           const lifeDisplay = document.getElementById('life');
           if (this.player.life >= 0) {
             this.obstacles.splice(i, 1);
+            this.grunt;
             this.player.life--;
             lifeDisplay.textContent = `${this.player.life}`;
           }

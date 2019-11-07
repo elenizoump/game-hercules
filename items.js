@@ -63,5 +63,6 @@ class Badies extends Obstacles {
   }
   draw() {
     this.context.drawImage(this.imageToPrint, this.x, this.y, 130.39, 55.56)
+    this.game.birdsound;
   }
 }
