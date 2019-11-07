@@ -13,12 +13,12 @@ class Game {
     this.gameOver = new GameOver(this);
     this.grunt = new Audio("sounds/pain4.wav");
     this.birdsound = new Audio("sounds/deathd.wav");
-    this.gameOverSound = new Audio("sounds/tribute.wav")
-    this.gameSound = new Audio("")
+    this.gameOverSound = new Audio("sounds/tribute.wav");
+    this.gameSound = new Audio("sounds/NES_TheOldTowerInn.mp3");
   }
 
   start() {
-    this.gameSound;
+    this.gameSound.play();
     this.animation();
     this.controls.setControls();
   }
@@ -65,6 +65,7 @@ class Game {
 
     for (let i = 0; i < this.obstacles.length; i++) {
       this.obstacles[i].update();
+      this.obstacles[i].updateImage(timestamp);
       if (this.obstacles[i].y > this.canvas.height) {
         this.obstacles.splice(i, 1);
       }
@@ -84,7 +85,7 @@ class Game {
           const lifeDisplay = document.getElementById('life');
           if (this.player.life >= 0) {
             this.obstacles.splice(i, 1);
-            this.grunt;
+            this.grunt.play();
             this.player.life--;
             lifeDisplay.textContent = `${this.player.life}`;
           }

@@ -6,7 +6,7 @@ class Player {
     this.width = 101;
     this.height = 207.99;
     this.context = game.context;
-    this.vx = 3;
+    this.vx = 100;
     this.vy = 0;
     //right
     this.image = new Image();
@@ -53,18 +53,19 @@ class Player {
     this.movingDirection = null;
     this.life = 3;
     this.score = 0;
+    this.velocity = 9
   }
 
   update() {
-    console.log(this.movingDirection);
-    console.log(this.vx);
+    // console.log(this.movingDirection);
+    // console.log(this.vx);
 
     switch (this.movingDirection) {
       case 'left':
-        this.x -= 2;
+        this.x -= this.velocity;
         break;
       case 'right':
-        this.x += 2;
+        this.x += this.velocity;
         break;
         // case null:
         //   this.game.background.velocityX = 0;
@@ -73,10 +74,9 @@ class Player {
   }
 
   moveRight() {
-    console.log("I AM BEING CALLED?")
 
-    if (this.x > 2800) {
-      this.x = 100;
+    if (this.x > game.width - 101) {
+      this.x = game.width - 101;
     }
   }
 

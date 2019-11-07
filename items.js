@@ -19,6 +19,12 @@ class Obstacles {
     this.x += -7
     this.y += 6
   }
+
+  updateImage(timestamp) {
+
+    console.log("i am a cheater")
+  };
+
 };
 
 class Goodies extends Obstacles {
@@ -56,13 +62,29 @@ class Badies extends Obstacles {
     this.arrayOfBaddies = [this.image, this.image1, this.image2, this.image3, this.image4];
     this.indexOfarrayOfBaddies = 0;
     this.imageToPrint = this.arrayOfBaddies[this.indexOfarrayOfBaddies];
-    this.imageToPrint = this.arrayOfBaddies[this.indexOfarrayOfBaddies];
     this.speedImages = 150;
     this.imgTime = 0;
 
   }
   draw() {
     this.context.drawImage(this.imageToPrint, this.x, this.y, 130.39, 55.56)
-    this.game.birdsound;
+    this.game.birdsound.play();
   }
+
+  updateImage(timestamp) {
+
+    if (this.imgTime < timestamp - this.speedImages) {
+
+
+      if (this.indexOfarrayOfBaddies >= 4) {
+        this.indexOfarrayOfBaddies = 0;
+        this.imageToPrint = this.arrayOfBaddies[this.indexOfarrayOfBaddies];
+      } else {
+        this.indexOfarrayOfBaddies++;
+        this.imageToPrint = this.arrayOfBaddies[this.indexOfarrayOfBaddies];
+      };
+      this.imgTime = timestamp;
+
+    }
+  };
 }
