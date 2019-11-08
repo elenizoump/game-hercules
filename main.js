@@ -14,7 +14,7 @@ herculesBanner.src = 'images/herculesbanner.png';
 
 window.onload = function () {
   context.drawImage(logoImage, ($canvas.width / 2) - 125, 60, 250, 380);
-  context.drawImage(herculesBanner, $canvas.width / 5, 415);
+  context.drawImage(herculesBanner, $canvas.width / 3.8, 415);
 
   function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
     var len = str.length,
@@ -58,6 +58,7 @@ window.onload = function () {
 
 function disappear() {
   document.getElementById("instructions").style.display = "none";
+
 }
 
 document.getElementById("start-button").onclick = function () {

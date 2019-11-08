@@ -23,6 +23,7 @@ class Game {
     this.controls.setControls();
   }
 
+
   drawEverything() {
     this.clearAll();
     this.background.draw();
@@ -100,4 +101,23 @@ class Game {
   clearAll() {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
   };
+
+  restart() {
+    var btn = document.getElementById('start-button');
+    // Data attribuet to keep tab of whether it is clicked or not
+    btn.dataset.clicked = "1";
+    // Attach event
+    btn.addEventListener('click', change);
+
+    function change() {
+      if (!!this.dataset.clicked) {
+        this.dataset.clicked = "";
+        this.start();
+
+      } else {
+        this.dataset.clicked = "1";
+        this.start();
+      }
+    }
+  }
 }

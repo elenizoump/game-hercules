@@ -162,11 +162,7 @@ canvas {
   justify-content: space-between;
   flex-direction: column;
   color: #eca214;
-  margin-top: 120px;
-}
-
-#continueButton {
-  order: 2;
+  margin-top: 150px;
 }
 
 #instructions .instruction-boxes {
