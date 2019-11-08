@@ -57,7 +57,7 @@ window.onload = function () {
 };
 
 function disappear() {
-  document.getElementById("instructions").setAttribute("hidden", "true");
+  document.getElementById("instructions").style.display = "none";
 }
 
 document.getElementById("start-button").onclick = function () {
