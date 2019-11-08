@@ -134,11 +134,15 @@ body {
   justify-content: space-around;
 }
 /* #game-board {
-  background-color: white;
+  background-color
+  : white;
   float: left;
   padding: 20px 0px;
 } */
 
 canvas {
   background-color: #550606;
+}
+
+#instuctions {
 }

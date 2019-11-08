@@ -19,23 +19,53 @@ class Obstacles {
     this.x += -7
     this.y += 6
   }
-
-  updateImage(timestamp) {
-
-    console.log("i am a cheater")
-  };
-
 };
 
 class Goodies extends Obstacles {
   constructor() {
     super(game)
     this.id = "goodies"
+    this.image = new Image();
+    this.image.src = "images/boltsprite1.png";
+    this.image1 = new Image();
+    this.image1.src = "images/boltsprite2.png";
+    this.image2 = new Image();
+    this.image2.src = "images/boltsprite3.png";
+    this.image3 = new Image();
+    this.image3.src = "images/boltsprite4.png";
+
+    this.arrayOfGoodies = [this.image, this.image1, this.image2, this.image3];
+    this.indexOfarrayOfGoodies = 0;
+    this.imageToPrint = this.arrayOfGoodies[this.indexOfarrayOfGoodies];
+    this.speedImages = 150;
+    this.imgTime = 0;
+
   }
   draw() {
-    this.context.fillStyle = 'green';
-    this.context.fillRect(this.x, this.y, this.width, 20);
+    this.context.drawImage(this.imageToPrint, this.x, this.y, 29.17, 55)
   }
+
+  updateImage(timestamp) {
+
+    if (this.imgTime < timestamp - this.speedImages) {
+
+
+      if (this.indexOfarrayOfGoodies >= 3) {
+        this.indexOfarrayOfGoodies = 0;
+        this.imageToPrint = this.arrayOfGoodies[this.indexOfarrayOfGoodies];
+      } else {
+        this.indexOfarrayOfGoodies++;
+        this.imageToPrint = this.arrayOfGoodies[this.indexOfarrayOfGoodies];
+      };
+      this.imgTime = timestamp;
+
+    }
+  };
+  // }
+  // draw() {
+  //   this.context.fillStyle = 'green';
+  //   this.context.fillRect(this.x, this.y, this.width, 20);
+  // }
 
   // changeCategory() {
   //   this.category = newCategory;
@@ -68,7 +98,7 @@ class Badies extends Obstacles {
   }
   draw() {
     this.context.drawImage(this.imageToPrint, this.x, this.y, 130.39, 55.56)
-    this.game.birdsound.play();
+
   }
 
   updateImage(timestamp) {
