@@ -4,7 +4,6 @@ class Game {
     this.context = $canvas.getContext('2d');
     this.height = $canvas.height;
     this.width = $canvas.width;
-    this.instructions = new Instructions(this);
     this.player = new Player(this);
     this.background = new Background(this);
     this.controls = new Controls(this);

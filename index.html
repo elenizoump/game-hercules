@@ -34,37 +34,27 @@
       <!-- <div id="game-board"></div> -->
     </section>
     <!-- <img src="images/gamelogo.png" alt="Game Logo" /> -->
-    <!-- <div id="instructions">
-      <section class="box1"></section>
-      <img
-        src="images/decorative-2858909_1280 copy.png"
-        alt="instructions box"
-      />
-      <p>Move the player left or right using the keyboard left and right arrows.</p>
+    <div id="instructions">
+      <h1>How to play</h1>
+      <div class="instruction-boxes">
+      <section class="box">
+          <img class="box1" src="images/herculesInstructions.png" />
+        <p id="box1">
+          Move the player left or right using the left and right
+          keyboard arrows.
+        </p>
       </section>
-      <section class="box2">
-        <img
-        src="images/decorative-2858909_1280 copy.png"
-        alt="instructions box"
-        />
-         <p>Avoid the man-eating birds.</p>
+      <section class="box">
+          <img class="box2" src="images/birdinstructions.png"/>
+        <p id="box2"> Avoid the man-eating birds.</p>
       </section>
-      <section class="box3">
-          <img
-            src="images/decorative-2858909_1280 copy.png"
-            alt="instructions box"
-          />
-          <p>Avoid the man-eating birds.</p>
-          </section>
-          <section class="box3">
-              <img
-                src="images/decorative-2858909_1280 copy.png"
-                alt="instructions box"
-              />
-              <p>Get the lightening bolts to increase your score.</p>
-          </section>
-          <button id="start-button">Continue</button>
-    </div> -->
+      </section>
+      <section class="box">
+          <img class="box3" src="images/boltInstructions.png"/>
+        <p id="box3">Get the lightening bolts to increase your score.</p>
+      </section>
+      </div>
+    </div>
 
     <canvas
       id="myCanvas"
@@ -79,7 +69,6 @@
     <script src="background.js"></script>
     <script src="controls.js"></script>
     <script src="gameover.js"></script>
-    <script src="instructions.js"></script>
     <script src="game.js"></script>
     <script src="main.js"></script>
   </body>

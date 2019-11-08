@@ -56,9 +56,14 @@ window.onload = function () {
 
 };
 
-document.getElementById("start-button").onclick = function () {
-  game.start();
+function disappear() {
+  document.getElementById("instructions").setAttribute("hidden", "true");
+}
 
+document.getElementById("start-button").onclick = function () {
+
+  disappear();
+  game.start();
 }
 
 
