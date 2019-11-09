@@ -154,7 +154,7 @@ canvas {
 
   z-index: 10;
   width: 1076px;
-  height: 595px;
+  height: 600px;
   background-image: url("images/decorative-2858909_1280 copy.png");
   background-size: 100% 100%;
   background-color: #550606;
@@ -162,7 +162,7 @@ canvas {
   justify-content: space-between;
   flex-direction: column;
   color: #eca214;
-  margin-top: 150px;
+  margin-top: 124px;
 }
 
 #instructions .instruction-boxes {
@@ -186,4 +186,22 @@ canvas {
 
 .box3 {
   margin-bottom: 30px;
+}
+
+.game-instructions button {
+  width: 10%;
+  height: 20%;
+  font-size: 20px;
+  font-family: Herculanum;
+  color: black;
+  top: 55px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #eca214;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 127px;
+  margin-bottom: 20px;
+  opacity: 100%;
 }

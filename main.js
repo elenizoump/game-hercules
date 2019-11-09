@@ -11,10 +11,17 @@ logoImage.src = 'images/gamelogo.png';
 let herculesBanner = new Image();
 herculesBanner.src = 'images/herculesbanner.png';
 
+function disappear() {
+  document.getElementById("instructions").style.display = "none";
+}
+
+// function appear() {
+//   document.getElementById("instructions");
+// }
 
 window.onload = function () {
   context.drawImage(logoImage, ($canvas.width / 2) - 125, 60, 250, 380);
-  context.drawImage(herculesBanner, $canvas.width / 3.8, 415);
+  context.drawImage(herculesBanner, ($canvas.width / 2) - 427, 415);
 
   function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
     var len = str.length,
@@ -45,28 +52,19 @@ window.onload = function () {
   context.strokeStyle = '#D7A22E';
   context.lineWidth = 4;
   drawTextAlongArc(context, 'CHALLENGE OF', centerX, centerY, radius, angle);
-
-
-
-
-  // context.fillStyle = '#D7A22E';
-  // context.font = "50px Herculanum";
-  // context.fillText("CHALLENGE OF", ($canvas.width - 350) / 2.2, 50);
-
-
+  disappear();
 };
 
-function disappear() {
-  document.getElementById("instructions").style.display = "none";
 
-}
 
 document.getElementById("start-button").onclick = function () {
+  document.getElementById("instructions").style.display = "block";
+}
 
+
+document.getElementById("continue-button").onclick = function () {
   disappear();
   game.start();
 }
-
-
 
 // context.drawImage(this.img, this.x, 0, 2880, this.height);
